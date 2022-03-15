@@ -6,8 +6,11 @@ function newItem() {
         return;
     }
 
+    //Get the element and the value of the input
     let input = $('#input').val();
     let element = $('<li></li>');
+
+    //Add the element to the list
     element.append(input);
 
     //Add the item to the list as a list element
@@ -22,16 +25,19 @@ function newItem() {
     //Create delete button
     let deleteButton = $('<crossoutbutton></crossoutbutton>');
     deleteButton.append(document.createTextNode('Remove'));
+
     //Append the button to the item
     element.append(deleteButton);
+
+    //Adding the listener for the click event
     deleteButton.on("click", deleteListItem);
 
     function deleteListItem() {
         element.addClass('delete');
     }
 
-    //Assigning the toggle class to each li element
     function crossOut() {
+        //Assigning the toggle class strike 
         element.toggleClass('strike');
     }
 
